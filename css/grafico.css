@@ -1,0 +1,287 @@
+/* ----------- */
+/* Fondo */
+
+body{
+    background-color: #3bb2b8;
+    background: linear-gradient(
+    45deg,
+    rgba(192, 260, 240, 1),
+    rgba(235, 190, 149, 1)
+    );
+    background-repeat: no-repeat;
+    height: 270vh;
+}
+
+
+/* ----------- */
+/* Menu Barra */
+
+.menuinicio{
+    font-family:"Arial";
+    list-style-type: none;
+    padding: 0;
+    background: #379C9F;;
+    width: 90%;
+    max-width: 2000px;
+    margin: auto;
+}
+
+.menuinicio li a{
+    text-decoration: none;
+    color: white;
+    padding: 20px 30px;
+    display: block;
+}
+
+.menuinicio li{
+    display: inline-block;
+    text-align: center;
+}
+
+.menuinicio li a:hover{
+    background: orange;
+}
+
+ul {
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+}
+
+
+
+/* ----------- */
+/* Barra Busqueda */
+header{
+	width: 100%;
+	position: fixed;
+}
+
+.header-top{
+	width: 100%;
+	background: #379C9F;
+}
+
+.navegacion{
+	width: 90%;
+	max-width: 1000px;
+	margin: auto;
+	padding:12px 0;
+}
+
+input[type="search"]{
+	padding: 10px;
+	padding-right: 35px;
+	border: none;
+}
+
+.search{
+	width: 90%;
+	max-width: 1000px;
+	margin: auto;
+	background: #fff;
+	padding:0 10px;
+	padding-bottom: 5px;
+	max-height: 85%;
+	overflow-x: hidden;
+	display: none;
+}
+
+.search-table{
+	width: 100%;
+}
+
+tbody tr td{
+	width: 100%;
+}
+
+tbody tr td a{
+	text-decoration: none;
+	font-size: 18px;
+	color: #737373;
+	display: block;
+	width: 100%;
+	height: 100%;
+	padding: 20px 0;
+	padding-left: 20px;
+	border: 2px solid #fff;
+}
+
+tbody tr td a:hover{
+	border: 2px solid #378FD9;
+}
+
+.search::-webkit-scrollbar{
+	background:rgba(0,0,0,0);
+}
+
+.search::-webkit-scrollbar-button{
+ 	background:#C1C1C1;
+}
+
+.search::-webkit-scrollbar-thumb{
+	background:#C1C1C1;
+}
+
+.dataTables_length,
+.dataTables_filter,
+.dataTables_info,
+.dataTables_paginate {
+	display: none;
+}
+
+
+
+
+
+/* ----------- */
+/* Carrusel */
+
+.titulo {
+    font-size: 40px;
+    font-family: 'Arial', cursive;
+    margin-bottom: 40px;
+    color: black;
+}
+
+.subtitulo {
+    margin: 0;
+    color: #D338D3;
+    display: inline;
+    font-size: 50px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.sabor {
+    color: #fff;
+    margin: 7px 0;
+    font-size: 50px;
+    font-weight: 600;
+    text-shadow: 2px 2px 1px rgba(0,0,0,0.7);
+    font-family: 'Dancing Script', cursive;
+    margin-top: 0;
+}
+
+.linea-division {
+    width: 80%;
+    height: 2px;
+    background-color: #36221c;
+}
+
+.carousel{
+    min-height: 500px;
+}
+
+.carousel .carousel-item{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    background: #ccc;
+    width: 500px;
+    height: 500px;
+}
+
+.carousel .carousel-item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    border-radius: 15px;
+}
+
+.carousel .indicators .indicator-item{
+    border radius: 0;
+    transform: rotate(45deg);
+    margin: 0 15px;
+    background: #36221c;
+
+}
+
+
+/*  ----------------------- */
+/*-- Cuadros de Productos -- */
+
+#img_obs{
+	height: 100px;
+}
+#productomas{
+	color: #1D98F1;
+}
+
+
+
+
+
+/* ----------- */
+/* Footer */
+
+.pie-pagina{
+    width: 100%;
+    background-color: #379C9F;
+}
+.pie-pagina .grupo-1{
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap:50px;
+    padding: 45px 0px;
+}
+.pie-pagina .grupo-1 .box figure{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pie-pagina .grupo-1 .box figure img{
+    width: 250px;
+}
+.pie-pagina .grupo-1 .box h2{
+    color: #fff;
+    margin-bottom: 25px;
+    font-size: 20px;
+}
+.pie-pagina .grupo-1 .box p{
+    color: #efefef;
+    margin-bottom: 10px;
+}
+.pie-pagina .grupo-1 .red-social a{
+    display: inline-block;
+    text-decoration: none;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    color: #fff;
+    margin-right: 10px;
+    background-color: #0d2033;
+    text-align: center;
+    transition: all 300ms ease;
+}
+.pie-pagina .grupo-1 .red-social a:hover{
+    color: aqua;
+}
+.pie-pagina .grupo-2{
+    background-color: #0a1a2a;
+    padding: 15px 10px;
+    text-align: center;
+    color: #fff;
+}
+.pie-pagina .grupo-2 small{
+    font-size: 15px;
+}
+@media screen and (max-width:800px){
+    .pie-pagina .grupo-1{
+        width: 90%;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap:30px;
+        padding: 35px 0px;
+    }
+}

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Producto</title>
+	
+
+</head>
+<link rel="stylesheet" type="text/css" href="css/grafico.css">
+<link rel="stylesheet" type="text/css" href="css/imagenes.css">
+ <script type="text/javascript">
+        function $(element_id)
+        {
+            return document.getElementById(element_id);
+        }
+        function setSrc(element_id, src)
+        {
+            var element = $(element_id);
+            element.src = src;
+        }
+    </script>
+   
+    <div class="logo" align="center">
+        <img src="logo2.jpg">
+    </div>
+<body>
+
+    <h1 align="center"></h1>
+    <ul class="menuinicio">
+        <li><a href="Prueba1.html">Inicio</a></li>
+        <li><a href="PC.html">PC</a></li>
+        <li><a href="Producto.html">Componentes PC</a></li>
+        <li><a href="#">Accesorios PC</a></li>
+        <li><a href="login.html">Ingresar / Crear Usuario </a></li>
+		<li><a href="carrito.html">Ver carrito </a></li>
+		<li><a href="Pedidos_Bootstrap.html">Mis pedidos </a></li>
+        <li style="float:right"><a href="#acercadelatienda">Acerca de la tienda...</a></li>
+    </ul>
+    <br>
+<div>
+<div style="width: 140px; float: left;">
+<table class="default"><!-- Elegir imagen-->
+  <tr>
+    <td><img  src="Imagenesdeproductos/Teclado/Tecladorgb1.jpg"  width="100" height="85" onclick="setSrc('main-image', this.src)"></td>
+</tr>
+    <td><img src="Imagenesdeproductos/Teclado/Tecladorgb2.jpg" width="100" height="85" onclick="setSrc('main-image', this.src)"></td>
+<tr>
+    <td><img src="Imagenesdeproductos/Teclado/Tecladorgb3.jpg" width="100" height="85" onclick="setSrc('main-image', this.src)"></td>
+</tr>
+  <tr>
+    <td><img src="Imagenesdeproductos/Teclado/Tecladorgb4.jpg"  width="100" height="85" onclick="setSrc('main-image', this.src)"></td>
+  </tr>
+</table>
+</div>
+
+<br><br>
+    <div  style="display: inline-block"> <!-- descripcion-->
+    	<div  style="width: 450px; float: right;" >
+			<table style="width: 420px; float: right;">
+				<tr>
+					<th>Teclado para Juegos en Español, E T EASYTAO Teclado 7 colores para Juegos , Teclado Retroiluminado con Arco Iris de 104 Teclas, 19 Claves Libres de Conflictos, Cable USB, Compatible con Windows, Mac, PC, etc.</th>
+				</tr>
+				<td><br>
+					<td><td></td></td>
+				<tr>
+					<td align="center">Precio: $152</td>
+				</tr>
+				<tr><td><br></td></tr>
+				<tr><table style="width: 440px; float: right;">
+					<tr>
+						<th>Tecnología de conectividad: </th>
+						<td>USB</td>
+					</tr>
+					<tr>
+						<th>Caracteristica esepecial </th>
+						<td>Iluminación, Teclado multimedia</td>
+					</tr>
+					<tr>
+						<th>Dispositivos compatibles: </th>
+						<td>Portátil, PC, Consola de videojuegos</td>
+					</tr>
+					<tr>
+						<th>Marca: </th>
+						<td>E T EASYTAO</td>
+					</tr>
+					<tr>
+						<th>Color: </th>
+						<td>Negro</td>
+					</tr>
+					<tr>
+						<th>Numero de teclas: </th>
+						<td>104</td>
+					</tr>
+					<tr>
+						<th>Numero de botones: </th>
+						<td>104</td>
+					</tr>
+						</table>
+					</tr>
+				</table>
+			</tr>
+		</td>
+		</table>
+
+		</div>
+
+
+	<!--<img  src="Imagenesdeproductos/Teclado/Tecladorgb1.jpg"  width="350" height="300">-->
+		
+	<img src="Imagenesdeproductos/Teclado/Tecladorgb1.jpg" id="main-image" alt="" width="350" height="300"  >
+	
+</div>
+	<div style="width: 200px; float: right;"> <!-- carrito-->
+				<table >
+				<br><br>
+				<th>
+				Cantidad: 
+
+				</th>
+			</table>
+		</div>
+    </div>
+
+  <br>
+  <div>
+  <form>
+  <p class="clasificacion">
+    <input id="radio1" type="radio" name="estrellas" value="5"><!--
+    --><label for="radio1">★</label><!--
+    --><input id="radio2" type="radio" name="estrellas" value="4"><!--
+    --><label for="radio2">★</label><!--
+    --><input id="radio3" type="radio" name="estrellas" value="3"><!--
+    --><label for="radio3">★</label><!--
+    --><input id="radio4" type="radio" name="estrellas" value="2"><!--
+    --><label for="radio4">★</label><!--
+    --><input id="radio5" type="radio" name="estrellas" value="1"><!--
+    --><label for="radio5">★</label>
+  </p>
+</form>
+
+<a href='carrito.html'><button>Agregar a carrito</button></a>
+<a href='review.html'><button id='btn_comentario'>Agregar comentario</button></a>
+</div>
+<br><br><br>
+
+
+
+
+
+</div>
+</body>
+
+</html>

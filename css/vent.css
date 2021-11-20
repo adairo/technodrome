@@ -1,0 +1,32 @@
+.ventana{
+    background:rgb(14, 14, 15);
+    width:30%;
+    color:rgb(37, 223, 120);
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:38px;
+    text-align:center;
+    padding:33px;
+    min-height:250px;
+    border-radius: 22px;
+    position:absolute;
+    left:34%;
+    top:35%;
+
+}
+
+
+p{
+    background:rgb(229, 229, 231);
+    width:30%;
+    color:rgb(7, 8, 8);
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:38px;
+    text-align:center;
+    padding:10px;
+    min-height:20px;
+    border-radius: 22px;
+    position:absolute;
+    left:36%;
+    top:60%;
+
+}

@@ -1,0 +1,58 @@
+/* initial config */
+*{
+  padding: 0;
+  margin: 0;
+}
+
+html{
+  font-family: sans-serif;
+  font-size: 10px;
+}
+
+/* font size */
+
+h1{font-size: 2.5rem;}
+p, a {font-size: 1.5rem;}
+
+/* style */
+
+h1 {margin-top: 0;}
+#main_div{
+  margin: 10px auto;
+  padding: 2rem;
+  max-width: 35%;
+  border-radius: 1rem;
+  box-shadow: 2px 2px 10px 2px rgba(0, 0, 0, 0.2);
+}
+
+form label {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1.8rem;
+  font-weight: bold;
+  font-family: "Arial Narrow", "sans-serif";
+  letter-spacing: 0.1rem;
+  font-size: 2rem;
+}
+
+input {
+  font-size: 1.5rem;
+  border: 2px solid lightgray;
+  border-radius: 10px;
+  margin-top: 0.7rem;
+  padding: 0.6rem 1.4rem;
+}
+
+input[type='submit']{ 
+  margin-top: 1.4rem;
+  width:100%;
+  height: 6rem;
+  background-color:cadetblue;
+  border-radius: 10px;
+  font-family: "Arial Narrow", "sans-serif";
+  font-weight: bold;
+  color:white;
+  font-size: 1.7rem;
+  border: 0;
+}
+
