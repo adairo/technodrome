@@ -51,25 +51,39 @@
 
 
   <body>
+  <?php 
+    include('bd/connection.php');
+    include('modelo/ProductoModel.php');
 
+    $pm = new ProductoModel();
+    $data = $pm->getLastAdded();
+    print_r($data);
+  ?>
+  <main>
+
+    <div class="title-section">
+          <h2>Productos agregados recientemente</h2>
+    </div>
     <!-- Cuadros de Productos -->
-    <section class='all-products'>
+    <section class='product-section'>
       <?php 
-      for($i=0; $i<4; $i++) {?>
+      foreach($data as $product): ?>
         <div class="producto-home">
           <img src='/resources/products/150.png ' width="150px" height="150px">
           <div class="description-home">
-            <p class='title'>Título</p>
-            <p class='price'>$1,340</p>
-            <p class='category'>en <a href="">PC</a></p>
+            <p class='title'><?php echo $product['titulo']?></p> <!-- Título del producto -->
+            <p class='price'><?php echo '$'.$product['precio']?></p></p> <!-- Precio del producto -->
+            <p class='category'>en <a href=""><?php echo $product['categoria']?></p></a></p>
             <div class="description-buttons">
               <button class='info'>Ver más</button>
               <button class='carrito'>Añadir al carrito</button>
             </div>
           </div>
         </div>
-      <?php }?>
+      <?php endforeach; ?>
     </section>
+    
+  </main>
 
     
     <!-- Footer Informacion -->

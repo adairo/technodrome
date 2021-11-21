@@ -105,8 +105,16 @@ body{
 /*  ----------------------- */
 /*-- Cuadros de Productos -- */
 
-.all-products{
-    display: inline-flex;
+
+.title-section {
+    width: fit-content;
+    margin: 0 auto;
+    font-size: 1.4rem;
+}
+.product-section{
+    display: flex;
+    justify-content: flex-start;
+    overflow: scroll;
 }
 
 .producto-home{

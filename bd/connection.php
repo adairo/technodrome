@@ -25,6 +25,7 @@ class Database {
                 die($e->getMessage());
             }
         }
+        return self::$conx;
     }
 
     public static function disconnect(){
