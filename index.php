@@ -57,7 +57,6 @@
 
     $pm = new ProductoModel();
     $data = $pm->getLastAdded();
-    print_r($data);
   ?>
   <main>
 
@@ -69,7 +68,7 @@
       <?php 
       foreach($data as $product): ?>
         <div class="producto-home">
-          <img src='/resources/products/150.png ' width="150px" height="150px">
+          <img src=<?php echo './resources/products/' . $product['id_producto'] . '/150.png'; ?> width="150px" height="150px">
           <div class="description-home">
             <p class='title'><?php echo $product['titulo']?></p> <!-- Título del producto -->
             <p class='price'><?php echo '$'.$product['precio']?></p></p> <!-- Precio del producto -->
@@ -82,7 +81,7 @@
         </div>
       <?php endforeach; ?>
     </section>
-    
+
   </main>
 
     

@@ -112,16 +112,19 @@ body{
     font-size: 1.4rem;
 }
 .product-section{
+    margin: 0 auto;
     display: flex;
     justify-content: flex-start;
     overflow: scroll;
+    
+    width: 95%;
 }
 
 .producto-home{
     margin: 2rem;
     padding: 1.4rem;
     background: white;
-    width: 40rem;
+    min-width: 40rem;
   
     display: flex;
     border-radius: 1rem;
