@@ -1,4 +1,5 @@
 <?php
+define('ROOT_DIRECTORY', dirname(__FILE__, 2));
 
 class Database {
 

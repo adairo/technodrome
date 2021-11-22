@@ -1,0 +1,106 @@
+/* ----------- */
+/* Configuración Global */
+
+*{
+    margin:0;
+    padding: 0;
+    
+}
+
+html, body{
+    font-size: 10px;
+    font-family: 'sans-serif';
+    
+}
+
+body{
+    background-color: #3bb2b8;
+    background: linear-gradient(
+    45deg,
+    rgba(192, 260, 240, 1),
+    rgba(235, 190, 149, 1)
+    );
+    background-repeat: no-repeat;
+}
+
+/* ----------- */
+/* Barra Superior */
+
+.header-top{
+    display: flex;
+    width: 100%;
+    
+    align-items: baseline;
+    
+	background: #379C9F;
+    padding: 0.6rem;
+}
+
+.header-top p{
+    font-size: 3.2rem;
+    padding: 0.8rem;
+    color: white;    
+}
+
+.header-top form{
+    padding-left: 2rem;
+    width: 60%;
+    padding-bottom: 1rem;
+}
+.search-bar{
+    padding: 1rem 0;
+    margin: 0;
+    
+    font-size: 1.5rem;
+    padding-left: 1rem;
+    border: 0;
+    border-radius: 0.2rem;
+    width: 80%;
+}
+
+.header-top input[type='submit']{
+    /* Search button*/
+    display: relative;
+ 
+    font-size: 1.4rem;
+    height: 3.9rem;
+    border-radius: 0.2rem;
+    border: 0;
+    min-width: 10%;
+    background: yellowgreen;
+    color:darkgreen;
+}
+
+.header-top ul{
+    list-style: none;
+    display: flex;
+    font-size: 1.7rem;
+}
+
+.header-top ul a{
+    color: white;
+    text-overflow: ellipsis;
+    overflow: hidden; 
+    white-space: nowrap;
+    padding: 3rem;
+}
+
+/* Barra de categorías */
+
+.header-bottom {
+    background: #7CAC9F;
+}
+.header-bottom ul{
+    display: flex;
+    list-style: none;
+    flex-direction: row;
+}
+
+.header-bottom ul li {
+    margin: 1.2rem;
+    font-size: 1.8rem;
+}
+
+.header-bottom a{
+    color: white;
+}

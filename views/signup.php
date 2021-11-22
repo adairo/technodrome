@@ -1,7 +1,7 @@
-<link rel='stylesheet' href='css/signup.css'>
-<div id='main_div'>
+<link rel='stylesheet' href='style/css/signup.css'>
+<div id='main-div'>
   <h1>Crear cuenta</h1>
-  <form method='post'>
+  <form method='post' class='data-form'>
     <label>
       Nombre
       <input type='text' placeholder='Ingresa tu(s) nombre(s)'>
@@ -27,7 +27,7 @@
       <input type='password' placeholder='Repite la contraseña'>
     </label>
 
-    <input type='submit' value='Crear cuenta'>
+    <input class='button-form' type='submit' value='Crear cuenta'>
 
   </form>
 

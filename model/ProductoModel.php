@@ -24,4 +24,15 @@ class ProductoModel {
         return $data;
     }
 
+    function getByID($id){
+        $sql = "SELECT * FROM productos
+                WHERE id_producto = :id_producto";
+        $sql_prep = $this->DB->prepare($sql);
+        $sql_prep->bindValue('id_producto', $id);
+        $sql_prep->execute();
+        $data = $sql_prep->fetch(PDO::FETCH_ASSOC);
+
+        return $data;
+    }
+
 }
