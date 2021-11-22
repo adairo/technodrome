@@ -1,3 +1,4 @@
+<link rel='stylesheet' href='style/css/global.css'>
 <link rel='stylesheet' href='style/css/signup.css'>
 <div id='main-div'>
   <h1>Iniciar sesión</h1>

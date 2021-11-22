@@ -1,3 +1,4 @@
+<link rel='stylesheet' href='style/css/global.css'>
 <link rel="stylesheet" href="style/css/main.css">
 <main>
 

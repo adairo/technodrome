@@ -20,9 +20,16 @@ class MainController{
     function showProduct(){
        
         $product = $this->productModel->getByID($_REQUEST['id_producto']);
-        
+
         include_once(ROOT_DIRECTORY . '/views/header.php');
         include_once(ROOT_DIRECTORY . '/views/product.php');
+        include_once(ROOT_DIRECTORY . '/views/footer.php');
+    }
+
+    function showShoppingCar(){
+
+        include_once(ROOT_DIRECTORY . '/views/header.php');
+        include_once(ROOT_DIRECTORY . '/views/carrito.html');
         include_once(ROOT_DIRECTORY . '/views/footer.php');
     }
 

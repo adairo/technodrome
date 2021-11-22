@@ -1,17 +1,5 @@
 /* ----------- */
-/* Configuración Global */
-
-*{
-    margin:0;
-    padding: 0;
-    
-}
-
-html, body{
-    font-size: 10px;
-    font-family: 'sans-serif';
-    
-}
+/* Fondo */
 
 body{
     background-color: #3bb2b8;
@@ -94,6 +82,8 @@ body{
     display: flex;
     list-style: none;
     flex-direction: row;
+    margin: 0 auto;
+    width: fit-content;
 }
 
 .header-bottom ul li {
