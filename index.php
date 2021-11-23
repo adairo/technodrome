@@ -3,7 +3,7 @@
     require_once('controller/mainController.php');
     require_once('controller/productController.php');
     
-
+    /* holaaa */
     $main_controller = new MainController();
 
     if (isset($_REQUEST['method'])){
