@@ -60,14 +60,14 @@ class ClienteModel{
 
     function signUp($data){
         $this->DB->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $sql = "INSERT INTO clientes(id_cliente, nombre, apellidos, email, contraseña)
-                VALUES (:id_cliente, :nombre, :appelidos, :email, :contraseña)";
+        $sql = "INSERT INTO clientes(nombre, apellidos, email, user_pass)
+                VALUES (:nombre, :apellidos, :email, :user_pass)";
         $sql_prep = $this->DB->prepare($sql);
-        $sql_prep->bindValue(':id', ''); # Se pasan los parámetros de manera segura para evitar SQL Injections
-        $sql_prep->bindValue(':nombre', $data['nombre']);
+        
+        $sql_prep->bindValue(':nombre', $data['nombre']);# Se pasan los parámetros de manera segura para evitar SQL Injections
         $sql_prep->bindValue(':apellidos', $data['apellidos']);
         $sql_prep->bindValue(':email', $data['email']);
-        $sql_prep->bindValue(':contraseña', $data['contraseña']);   
+        $sql_prep->bindValue(':user_pass', $data['user_pass']);   
         $sql_prep->execute();  
     }
 

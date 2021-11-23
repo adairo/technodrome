@@ -2,6 +2,10 @@
 <link rel="stylesheet" href="style/css/main.css">
 <main>
 
+<?php if ($status != null) 
+  echo "<div class='notification'>$status</div>" 
+?>
+
   <div class="title-section">
         <h2>Productos agregados recientemente</h2>
   </div>
