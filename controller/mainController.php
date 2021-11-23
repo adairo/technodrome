@@ -47,6 +47,12 @@ class MainController{
         include_once(ROOT_DIRECTORY . '/views/signup.php');
         include_once(ROOT_DIRECTORY . '/views/footer.php');
     }
+    function showMetodoPago(){
+        include_once(ROOT_DIRECTORY . '/views/header.php');
+        include_once(ROOT_DIRECTORY . '/views/metodopago.php');
+        include_once(ROOT_DIRECTORY . '/views/footer.php');
+    }
+
 
     function showPedidos(){
         include_once(ROOT_DIRECTORY . '/views/header.php');

@@ -23,8 +23,8 @@
           <p class='price'><?php echo '$'.$product['precio']?></p></p> <!-- Precio del producto -->
           <p class='category'>en <a href=""><?php echo $product['categoria']?></p></a></p>
           <div class="description-buttons">
-            <button class='info'>Ver más</button>
-            <button class='carrito'>Añadir al carrito</button>
+          <a href="index.php?method=showProduct"><button class='info'>Ver más</button></a>
+          <a href="index.php?method=showShoppingCar"><button class='carrito'>Añadir al carrito</button></a>
           </div>
         </div>
       </div>
