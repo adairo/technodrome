@@ -32,5 +32,5 @@
 
   </form>
 
-  <p>¿Ya tienes cuenta? <a href=login.php>Inicia sesión</a></p>
+  <p>¿Ya tienes cuenta? <a href="index.php?method=showLogin">Inicia sesión</a></p>
 </div>
