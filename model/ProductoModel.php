@@ -25,8 +25,7 @@ class ProductoModel {
     }
 
     function getByID($id){
-        $sql = "SELECT * FROM productos
-                WHERE id_producto = :id_producto";
+        $sql = "SELECT * FROM productos WHERE id_producto = :id_producto";
         $sql_prep = $this->DB->prepare($sql);
         $sql_prep->bindValue('id_producto', $id);
         $sql_prep->execute();

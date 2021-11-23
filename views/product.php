@@ -10,7 +10,7 @@
         <div class="product-description">
           <?php include("resources/products/" . $product['id_producto'] . "/description.html"); ?>
         </div>
-        <button>Agregar al carrito</button>
+        <a href="index.php?method=showShoppingCar"><button>Agregar al carrito</button></a>
       </div>
     
       
