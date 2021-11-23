@@ -1,15 +1,18 @@
 <?php
 
-include_once(ROOT_DIRECTORY . '/model/ProductoModel.php');
+include_once('model/ProductoModel.php');
+include_once('model/ClienteModel.php');
 
 class MainController{
     private $productModel;
+    private $clientModel;
 
     function __construct(){
         $this->productModel = new ProductoModel();
+        $this->clientModel = new ClienteModel(); 
     }
 
-    function showHome(){
+    function showHome($status = null){
         $last_added = $this->productModel->getLastAdded();
         
         include_once(ROOT_DIRECTORY . '/views/header.php');
@@ -33,15 +36,35 @@ class MainController{
         include_once(ROOT_DIRECTORY . '/views/footer.php');
     }
 
-    function logIn(){
+    function showLogIn(){
         include_once(ROOT_DIRECTORY . '/views/header.php');
         include_once(ROOT_DIRECTORY . '/views/login.php');
         include_once(ROOT_DIRECTORY . '/views/footer.php');
     }
 
-    function signUp(){
+    function showSignUp(){
         include_once(ROOT_DIRECTORY . '/views/header.php');
         include_once(ROOT_DIRECTORY . '/views/signup.php');
         include_once(ROOT_DIRECTORY . '/views/footer.php');
+    }
+
+    function signUp(){
+
+        if (!empty($_SERVER['REQUEST_METHOD']) && ($_SERVER['REQUEST_METHOD']== 'POST')){
+            //  Todos los campos tendrán el atributo required de html, de otra forma habrá que verificar
+            //  que no se ingresen campos vacíos
+
+            if (trim($_POST['password']) == trim($_POST['cpassword'])){
+                
+                $data = array(
+                    'nombre'=> trim($_POST['first_name']),
+                    'apellidos' => trim($_POST['last_name']),
+                    'email' => trim($_POST['email']),
+                    'user_pass' => trim($_POST['password'])
+                );
+                $this->clientModel->signUp($data);
+                $this->showHome('register');
+            }
+        }
     }
 }

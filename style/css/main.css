@@ -1,4 +1,13 @@
 
+.notification{
+    font-size: 2rem;
+    font-family: 'Arial Narrow';
+    font-weight: bold;
+    padding: 0.6rem;
+    letter-spacing: 0.3rem;
+    text-align: center;
+    background: lightyellow;
+}
 /*  ----------------------- */
 /*-- Cuadros de Productos -- */
 

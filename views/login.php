@@ -18,5 +18,5 @@
 
   </form>
 
-  <p>¿No tienes cuenta? <a href="index.php?method=signUp">Regístrate</a></p>
+  <p>¿No tienes cuenta? <a href="index.php?method=showSignUp">Regístrate</a></p>
 </div>
