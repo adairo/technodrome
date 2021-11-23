@@ -2,7 +2,7 @@
 define('ROOT_DIRECTORY', dirname(__FILE__, 2));
 
 class Database {
-    /*comentario prueba 2*/
+    /*comentario prueba 3*/
     /*  Se ve mi comentario?*/
     private static $db_name = 'technodrome';
     private static $host = 'localhost';
