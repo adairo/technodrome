@@ -54,6 +54,18 @@ class MainController{
     }
 
 
+    function showPedidos(){
+        include_once(ROOT_DIRECTORY . '/views/header.php');
+        include_once(ROOT_DIRECTORY . '/views/pedidos.php');
+        include_once(ROOT_DIRECTORY . '/views/footer.php');
+    }
+
+    function showDireccion(){
+        include_once(ROOT_DIRECTORY . '/views/header.php');
+        include_once(ROOT_DIRECTORY . '/views/direccion.php');
+        include_once(ROOT_DIRECTORY . '/views/footer.php');
+    }
+
     function signUp(){
 
         if (!empty($_SERVER['REQUEST_METHOD']) && ($_SERVER['REQUEST_METHOD']== 'POST')){
