@@ -12,7 +12,7 @@ class MainController{
         $this->clientModel = new ClienteModel(); 
     }
 
-    function showHome($status = null){
+    function showHome($status = null, $results = null){
         $last_added = $this->productModel->getLastAdded();
         
         include_once(ROOT_DIRECTORY . '/views/header.php');
@@ -125,5 +125,19 @@ class MainController{
 
         // Se redirige a la pantalla principal
         header("location: index.php");
+    }
+
+    function search(){
+        
+        $results = null;
+       
+        if (!empty($_SERVER['REQUEST_METHOD']) && ($_SERVER['REQUEST_METHOD']== 'POST')){
+            $search_query = trim($_REQUEST['search-query']);
+            if (!empty($search_query)){
+                $results = $this->productModel->filterByName($search_query);
+                
+            }
+        }
+        $this->showHome(null, $results);
     }
 }

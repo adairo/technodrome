@@ -21,8 +21,8 @@
     margin: 0 auto;
     display: flex;
     justify-content: flex-start;
-    overflow: scroll;
-    
+    overflow-x: scroll;
+    scrollbar-width: none;
     width: 95%;
 }
 
