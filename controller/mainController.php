@@ -61,6 +61,14 @@ class MainController{
 
 
     function showPedidos(){
+        $pedido_available = $this->clientModel->isPedidosAvailable();
+        if($pedido_available != null){
+            $articulos = $this->clientModel->isArticulosPedido();
+        }
+        if($articulos != null){
+            $pedidos = 
+        }
+
         include_once(ROOT_DIRECTORY . '/views/header.php');
         include_once(ROOT_DIRECTORY . '/views/pedidos.php');
         include_once(ROOT_DIRECTORY . '/views/footer.php');
