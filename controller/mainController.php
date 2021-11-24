@@ -53,6 +53,12 @@ class MainController{
         include_once(ROOT_DIRECTORY . '/views/footer.php');
     }
 
+    function showNewMetodoPago(){
+        include_once(ROOT_DIRECTORY . '/views/header.php');
+        include_once(ROOT_DIRECTORY . '/views/NuevoMetodoPago.php');
+        include_once(ROOT_DIRECTORY . '/views/footer.php');
+    }
+
 
     function showPedidos(){
         include_once(ROOT_DIRECTORY . '/views/header.php');
