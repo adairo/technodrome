@@ -65,13 +65,21 @@ body{
     font-size: 1.7rem;
 }
 
+.header-top ul li{
+    /*Nombre de usuario*/
+    color:white;
+    font-weight: bold;
+    
+}
+
 .header-top ul a{
     color: white;
-    text-overflow: ellipsis;
     overflow: hidden; 
-    white-space: nowrap;
-    padding: 3rem;
+    padding-left: 3rem;
+    font-weight: normal;
 }
+
+
 
 /* Barra de categorías */
 
