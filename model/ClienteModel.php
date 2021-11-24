@@ -129,7 +129,7 @@ class ClienteModel{
                 WHERE id_cliente = :id LIMIT 1";
         $sql_prep = $this->DB->prepare($sql);
         $sql_prep->bindValue(':id', $id);
-        $sql_prep->query();
+        $sql_prep->execute();
         $data = $sql_prep->fetch(PDO::FETCH_ASSOC);
 
         if ($data['id_pedido'] == null){
@@ -149,7 +149,7 @@ class ClienteModel{
                 WHERE id_pedido = :id";
         $sql_prep = $this->DB->prepare($sql);
         $sql_prep->bindValue(':id', $id);
-        $sql_prep->query();
+        $sql_prep->execute();
         $data = $sql_prep->fetch(PDO::FETCH_ASSOC);
 
         return $data;
@@ -157,12 +157,12 @@ class ClienteModel{
 
     function isPedido($id){
         $this->DB->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $sql = "SELECT precio, cantidad, id_producto
+        $sql = "SELECT *
                 FROM articulos
-                WHERE id_articulos = :id";
+                WHERE id_articulo = :id";
         $sql_prep = $this->DB->prepare($sql);
         $sql_prep->bindValue(':id', $id);
-        $sql_prep->query();
+        $sql_prep->execute();
         $data = $sql_prep->fetch(PDO::FETCH_ASSOC);
 
         return $data;

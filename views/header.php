@@ -36,7 +36,7 @@
               echo "<li><a href='index.php?method=showLogIn'>Iniciar sesión</a></li>";
           ?>
 
-          <li><a href="index.php?method=showDireccion">Mis pedidos</a></li>
+          <li><a href="index.php?method=showPedidos">Mis pedidos</a></li>
           <li><a href="index.php?method=showShoppingCar">Carrito</a></li>
         </ul>
       </div> 

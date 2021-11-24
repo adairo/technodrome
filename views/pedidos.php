@@ -10,11 +10,17 @@
 </head>
 <body>
     <br>
+
+    <?php 
+    foreach($pedidos as $p1): ?>
     <div class="container">
         <div class="row" style="background-color: grey; border-radius: 4px; color:white;">
             <div class="col">
                 <label for=""> Fecha de Pedido:</label><br>
                 <label for=""> 11 de Noviembre 2021</label>
+                
+                <p ><a href='index.php?method=showPedidos<?php echo $p1['cantidad']?>'>
+            <?php echo $p1['cantidad']?></a></p> <!-- Fecha de articulo -->
             </div>
             <div class="col">
                 <label for=""> Total:</label><br>
@@ -54,6 +60,7 @@
             </div>
         </div>
     </div>
+    <?php endforeach; ?>
     
 
 
