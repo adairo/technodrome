@@ -30,6 +30,18 @@ class ClienteModel{
         return $data;                               # En este caso un array asociativo del tipo: ['nombre' -> 'Juan Pérez']
     }
 
+    function logIn($data){
+        $this->DB->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+        $sql = "SELECT id_cliente, nombre, email, user_pass FROM clientes WHERE email = :email AND user_pass = :user_pass"; 
+        $sql_prep = $this->DB->prepare($sql);
+        $sql_prep->bindValue(':email', $data['email']);
+        $sql_prep->bindValue(':user_pass', $data['user_pass']);
+        $sql_prep->execute();
+        $user = $sql_prep->fetch(PDO::FETCH_ASSOC);
+        return $user;
+    }
+
     function update($id, $data){
         $this->DB->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 

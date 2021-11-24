@@ -85,4 +85,39 @@ class MainController{
             }
         }
     }
+
+    function logIn(){
+        if (!empty($_SERVER['REQUEST_METHOD']) && ($_SERVER['REQUEST_METHOD']== 'POST')){
+            
+            //  algún tipo de verificación debería venir aquí :v
+            $data = array(
+                'email' => trim($_POST['email']),
+                'user_pass' => trim($_POST['password'])
+            );
+            $user = $this->clientModel->logIn($data);
+    
+            if ($user){
+                session_start();
+                            
+                $_SESSION["loggedin"] = true;
+                $_SESSION["id"] = $user['id_cliente'];
+                $_SESSION["username"] = $user['nombre'];                            
+                
+                // Se redirige a la pantalla principal
+                header("location: index.php");
+            }
+            else 
+                echo 'no existe';
+        }
+        print_r($user);
+    }
+
+    function logOut(){
+        session_start();
+        $_SESSION = array();
+        session_destroy();
+
+        // Se redirige a la pantalla principal
+        header("location: index.php");
+    }
 }

@@ -1,3 +1,6 @@
+<?php 
+  session_start();
+?>
 <!DOCTYPE html>
 <html lang="es-MX">
   <head>
@@ -24,7 +27,15 @@
 
       <div class="user-actions">
         <ul>
-          <li><a href="index.php?method=showLogIn">Iniciar sesión</a></li>
+          <?php 
+            if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true){
+              echo '<li>Bienvenido '. $_SESSION['username']. '</li>';
+              echo "<li><a href='index.php?method=logOut'>Cerrar sesión</a></li>";
+            }
+            else
+              echo "<li><a href='index.php?method=showLogIn'>Iniciar sesión</a></li>";
+          ?>
+
           <li><a href="index.php?method=showDireccion">Mis pedidos</a></li>
           <li><a href="index.php?method=showShoppingCar">Carrito</a></li>
         </ul>
