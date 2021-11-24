@@ -110,4 +110,49 @@ class ClienteModel{
         $sql_prep->execute();
     }
 
+    function isPedidoAvailable($id){
+        $this->DB->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $sql = "SELECT id_pedido
+                FROM pedidos
+                WHERE id_cliente = :id LIMIT 1";
+        $sql_prep = $this->DB->prepare($sql);
+        $sql_prep->bindValue(':id', $id);
+        $sql_prep->query();
+        $data = $sql_prep->fetch(PDO::FETCH_ASSOC);
+
+        if ($data['id_pedido'] == null){
+            echo 'No cuentas con pedidos en este momento :) ';
+            return 1;
+        }
+        else{
+            return $data;
+        }
+
+    }
+
+    function isArticulosPedido($id){
+        $this->DB->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $sql = "SELECT id_articulo
+                FROM articulos
+                WHERE id_pedido = :id";
+        $sql_prep = $this->DB->prepare($sql);
+        $sql_prep->bindValue(':id', $id);
+        $sql_prep->query();
+        $data = $sql_prep->fetch(PDO::FETCH_ASSOC);
+
+        return $data;
+    }
+
+    function isPedido($id){
+        $this->DB->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $sql = "SELECT precio, cantidad, id_producto
+                FROM articulos
+                WHERE id_articulos = :id";
+        $sql_prep = $this->DB->prepare($sql);
+        $sql_prep->bindValue(':id', $id);
+        $sql_prep->query();
+        $data = $sql_prep->fetch(PDO::FETCH_ASSOC);
+
+        return $data;
+    }
 }

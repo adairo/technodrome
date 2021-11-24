@@ -17,7 +17,7 @@ class ProductoModel {
 
     function getLastAdded(){
         $sql = "SELECT * FROM productos
-                ORDER BY id_producto LIMIT 10;";
+                ORDER BY  id_producto LIMIT 10;";
         $sql_prep = $this->DB->prepare($sql);
         $sql_prep->execute(); 
         $data = $sql_prep->fetchAll(PDO::FETCH_ASSOC);
