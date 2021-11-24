@@ -15,7 +15,7 @@
 
     <label>
       Código de Seguridad de la Tarjeta
-      <input type='password' placeholder='Ingrese codigo de seguridad'>
+      <input type='password' maxlength="3" placeholder='Ingrese codigo de seguridad'>
     </label>
 
     <label>
