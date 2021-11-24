@@ -2,7 +2,7 @@
 <link rel="stylesheet" href="style/css/product.css">
 <div id="main-div">
     <div class="product-about">
-      <img src='resources/products/<?php echo $product['id_producto']?>/500.png' alt="" width='500' heigth='500' >
+      <img src='resources/products/<?php echo $product['id_producto']?>/500.png' alt="">
       <div class="product-info">
         <h1><?php echo $product['titulo']?></h1>
         <a href=""><?php echo $product['categoria']?></a>

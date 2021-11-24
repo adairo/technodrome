@@ -20,8 +20,8 @@
     <div class='header-top'>
       <p>Technodrome</p>
       
-      <form id='search-field'>
-        <input type="text" class='search-bar' placeholder="Buscar en la página">
+      <form id='search-field' method='POST' action='index.php?method=search'>
+        <input type="text" class='search-bar' placeholder="Buscar en la página" name='search-query'>
         <input type="submit" value='Buscar'>
       </form>
 
