@@ -111,16 +111,21 @@ class MainController{
 
     function NewMetodoPago(){
 
+
         if (!empty($_SERVER['REQUEST_METHOD']) && ($_SERVER['REQUEST_METHOD']== 'POST')){
             //  Todos los campos tendrán el atributo required de html, de otra forma habrá que verificar
             //  que no se ingresen campos vacíos
+             session_start();
+             if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true){
 
                 $data = array(
-                    'tarjeta_2'=> trim($_POST['numerotarjeta'])
+                    'tarjeta_2'=> trim($_POST['numerotarjeta']), 'id_cliente' => $_SESSION["id"]
                 );
                 $this->clientModel->NewMetodoPago($data);
                 $this->showShoppingCar('register');
-
+            }
+            else
+            $this->showHome('Inicia sesión para agregar metodo de pago');
         }
     }
 
