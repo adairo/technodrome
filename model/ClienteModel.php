@@ -174,6 +174,19 @@ class ClienteModel{
         
     }
 
+    function getProduct($id){
+        $this->DB->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $sql = "SELECT *
+                FROM productos
+                WHERE id_producto = :id_producto";
+        $sql_prep = $this->DB->prepare($sql);
+        $sql_prep->bindValue(':id_producto', $id);
+        $sql_prep->execute();
+        $data = $sql_prep->fetchall(PDO::FETCH_ASSOC);
+
+        return $data;
+    }
+
     function isPedido($id){
         $this->DB->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $sql = "SELECT *

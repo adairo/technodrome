@@ -88,10 +88,16 @@ class MainController{
             if($articulos != null){
                 foreach($articulos as $idarticulo){
                     $id_articulos = $idarticulo['id_articulo'];
+                    
                 
                     $pedidos = $this->clientModel->isPedido($id_articulos);
+                    foreach($pedidos as $productos){
+                        $id_producto = $productos['id_producto'];
+                    }
+                    $producto = $this->clientModel->getProduct($id_producto);
                 }
-                print_r($pedidos);
+               // print_r($pedidos);
+               // print_r($producto);
             }
             include_once(ROOT_DIRECTORY . '/views/header.php');
             include_once(ROOT_DIRECTORY . '/views/pedidos.php');
