@@ -83,6 +83,23 @@ class ClienteModel{
         $sql_prep->execute();  
     }
 
+
+
+    function NewMetodoPago($data){
+        $this->DB->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $sql = "INSERT INTO clientes(tarjeta_2)
+                VALUES (:tarjeta_2)";
+        $sql_prep = $this->DB->prepare($sql);
+
+        $sql_prep->bindValue(':tarjeta_2', $data['tarjeta_2']);# Se pasan los parámetros de manera segura para evitar SQL Injections
+        $sql_prep->execute();
+    }
+
+
+
+
+
+
     function isAddresAvaible($id){
         $this->DB->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $sql = "SELECT direccion_1, direccion_2, direccion_3

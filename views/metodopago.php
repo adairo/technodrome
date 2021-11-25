@@ -5,24 +5,17 @@
   <form method='post' class='data-form'>
     <label>
       Metodo de Pago 1
-      <input type="radio" name="metodo1" value="1">VISA 9012
+      <input type="radio" name="metodo1" value="1">9012
     </label>
 
     <label>
       Metodo de Pago 2
-      <input type="radio" name="metodo2" value="2">MASTERCARD 3245
+      <input type="radio" name="metodo2" value="2">
     </label>
 
-    <label>
-      Metodo de Pago 3
-      <input type="radio" name="metodo3" value="3">PAYPAL
-    </label>
 
     <input  class='button-form' type='submit' value='CONFIRMAR PAGO'>
 
-    <div>
-    <a href="index.php?method=showNewMetodoPago"><button class="button-form">AGREGAR NUEVO METODO DE PAGO</button></a>
-    </div>
 
   </form>
 

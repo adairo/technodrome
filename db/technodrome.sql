@@ -46,7 +46,7 @@ CREATE TABLE `clientes` (
   `nombre` varchar(30) NOT NULL,
   `apellidos` varchar(30) NOT NULL,
   `email` varchar(30) NOT NULL,
-  `contraseña` varchar(30) NOT NULL,
+  `user_pass` varchar(30) NOT NULL,
   `direccion_1` varchar(60) DEFAULT NULL,
   `direccion_2` varchar(60) DEFAULT NULL,
   `direccion_3` varchar(60) DEFAULT NULL,
@@ -58,7 +58,7 @@ CREATE TABLE `clientes` (
 -- Volcado de datos para la tabla `clientes`
 --
 
-INSERT INTO `clientes` (`id_cliente`, `nombre`, `apellidos`, `email`, `contraseña`, `direccion_1`, `direccion_2`, `direccion_3`, `tarjeta_1`, `tarjeta_2`) VALUES
+INSERT INTO `clientes` (`id_cliente`, `nombre`, `apellidos`, `email`, `user_pass`, `direccion_1`, `direccion_2`, `direccion_3`, `tarjeta_1`, `tarjeta_2`) VALUES
 (2, 'Marco', 'Solis', 'solis@algo.com', '1234', NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
