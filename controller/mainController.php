@@ -30,10 +30,15 @@ class MainController{
     }
 
     function showShoppingCar(){
-
-        include_once(ROOT_DIRECTORY . '/views/header.php');
-        include_once(ROOT_DIRECTORY . '/views/carrito.html');
-        include_once(ROOT_DIRECTORY . '/views/footer.php');
+        session_start();
+        if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true){
+            $products = $_SESSION['carrito'];
+            include_once(ROOT_DIRECTORY . '/views/header.php');
+            include_once(ROOT_DIRECTORY . '/views/carrito.php');
+            include_once(ROOT_DIRECTORY . '/views/footer.php');
+        }
+        else
+            $this->showHome('Inicia sesión para acceder al carrito');
     }
 
     function showLogIn(){
@@ -66,8 +71,9 @@ class MainController{
             $articulos = $this->clientModel->isArticulosPedido();
         }
         if($articulos != null){
-            $pedidos = 
+            $pedidos = null; // ???
         }
+    
 
         include_once(ROOT_DIRECTORY . '/views/header.php');
         include_once(ROOT_DIRECTORY . '/views/pedidos.php');
@@ -95,7 +101,7 @@ class MainController{
                     'user_pass' => trim($_POST['password'])
                 );
                 $this->clientModel->signUp($data);
-                $this->showHome('register');
+                $this->showHome('Registro realizado con éxito');
             }
         }
     }
@@ -147,5 +153,35 @@ class MainController{
             }
         }
         $this->showHome(null, $results);
+    }
+
+    function addToCar(){
+
+        
+        session_start();
+        if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true){
+            $producto = $this->productModel->getById($_REQUEST['id_producto']);
+            $producto['cantidad'] = 1;
+            
+
+            if (empty($_SESSION['carrito'])){ //no existe un carrito aún
+                $_SESSION['carrito'] = array($producto);
+            }
+            else{ // Ya existe el carrito pero falta agregar el producto
+
+                foreach ($_SESSION['carrito'] as $key => $prod){
+                    if ($prod['id_producto'] == $producto['id_producto'])// Ya existe el producto
+                        $_SESSION['carrito'][$key]['cantidad'] += 1;
+                    else{
+                        $_SESSION['carrito'][count($_SESSION['carrito'])] = $producto; //Se debería insertar en la última posición
+                    }
+                }
+            }
+            print_r($_SESSION['carrito']);
+            $this->showHome('Producto agregado al carrito');
+        }
+
+        else 
+            $this->showHome("Inicia sesión para agregar productos al carrito");
     }
 }
