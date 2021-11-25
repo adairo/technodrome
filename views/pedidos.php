@@ -17,7 +17,8 @@
         <div class="row" style="background-color: grey; border-radius: 4px; color:white;">
             <div class="col">
                 <label for=""> Fecha de Pedido:</label><br>
-                <label for=""> 11 de Noviembre 2021</label><br>
+                <label for=""> <?php 
+                                 ?>11 de Noviembre 2021</label><br>
 
             </div>
             <div class="col">

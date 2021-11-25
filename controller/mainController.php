@@ -70,30 +70,36 @@ class MainController{
 
 
     function showPedidos(){
-        
-        $pedido_available = $this->clientModel->isPedidoAvailable(2);
-        //print_r($pedido_available);
-        foreach($pedido_available as $idpedido){
-            $idpedido = $idpedido;
-        }
-        if($pedido_available != null){
-            $articulos = $this->clientModel->isArticulosPedido($idpedido);
-            //print_r($articulos);
-        }else{
-            echo "No Hay pedidos";
-        }
-        
-        if($articulos != null){
-            foreach($articulos as $idarticulo){
-                $id_articulos = $idarticulo['id_articulo'];
-            
-                $pedidos = $this->clientModel->isPedido($id_articulos);
+        session_start();
+        if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true){
+            $id_cliente = $_SESSION["id"];
+            $pedido_available = $this->clientModel->isPedidoAvailable($id_cliente);
+            //print_r($pedido_available);
+            foreach($pedido_available as $idpedido){
+                $idpedido = $idpedido;
             }
-            print_r($pedidos);
+            if($pedido_available != null){
+                $articulos = $this->clientModel->isArticulosPedido($idpedido);
+                //print_r($articulos);
+            }else{
+                echo "No Hay pedidos";
+            }
+            
+            if($articulos != null){
+                foreach($articulos as $idarticulo){
+                    $id_articulos = $idarticulo['id_articulo'];
+                
+                    $pedidos = $this->clientModel->isPedido($id_articulos);
+                }
+                print_r($pedidos);
+            }
+            include_once(ROOT_DIRECTORY . '/views/header.php');
+            include_once(ROOT_DIRECTORY . '/views/pedidos.php');
+            include_once(ROOT_DIRECTORY . '/views/footer.php');
         }
-        include_once(ROOT_DIRECTORY . '/views/header.php');
-        include_once(ROOT_DIRECTORY . '/views/pedidos.php');
-        include_once(ROOT_DIRECTORY . '/views/footer.php');
+        else
+            $this->showHome('Inicia sesión para acceder a los pedidos');
+
     }
 
     function showDireccion(){
