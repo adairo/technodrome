@@ -13,6 +13,7 @@
 
     <?php 
     foreach($pedidos as $p1): ?>
+        <?php foreach($producto as $p2): ?>
     <div class="container">
         <div class="row" style="background-color: grey; border-radius: 4px; color:white;">
             <div class="col">
@@ -39,32 +40,34 @@
         </div>
         <div class="row" style="background-color: white; border-radius: 4px;">
             <div class="col" style="padding-top:5px">
-                <img src="resources/products/4/150.png" width="100" height="85"  alt="">
+                <img src= <?php echo 'resources/products/'. $p1['id_producto'] .'/150.png'; ?> width="150" height="150"  alt="Imagen de Producto">
             </div>
             <div class="col">
                 <label for=""> Producto: </label>
-                <label for=""> Hyper X - Mouse Alambrico RGB </label><br>
+                <label for=""> <?php
+                                    echo $p2['titulo']; ?> </label><br>
                 <label for=""> Cantidad: </label>
                 <label> <?php echo $p1['cantidad']; ?> </label><br>
             </div>
             <div class="col" style="text-align: center; padding-top: 5px;">
                 <div>
-                    <a href='Producto.html'><input type="button" value="Ir al producto" style="border-radius: 5px; width: 100%; background-color: #3bb2b8;background: linear-gradient(
+                    <a href='index.php?method=showProduct&id_producto=<?php echo $p1['id_producto']?>'><input type="button" value="Ir al producto" style="border-radius: 5px; width: 100%; background-color: #3bb2b8;background: linear-gradient(
                         45deg,
                         rgba(192, 260, 240, 1),
                         rgba(235, 190, 149, 1)
                         );"></a>
                 </div>
-                <div>
+                <!--<div>
                     <a href='review.html'><input type="button" value="Escribir opinion" style="border-radius: 5px; width: 100%; background-color: #3bb2b8;background: linear-gradient(
                         45deg,
                         rgba(192, 260, 240, 1),
                         rgba(235, 190, 149, 1)
                         );"></a>
-                </div>
+                </div>-->
             </div>
         </div>
     </div>
+    <?php endforeach;?>
     <?php endforeach; ?>
     
 
