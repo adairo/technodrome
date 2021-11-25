@@ -71,13 +71,15 @@ class MainController{
             $articulos = $this->clientModel->isArticulosPedido($idpedido);
             //print_r($articulos);
         }else{
-            echo "Nocarga";
+            echo "No Hay pedidos";
         }
-        foreach($articulos as $idarticulo){
-            $idarticulo = $idarticulo;
-        }
+        
         if($articulos != null){
-            $pedidos = $this->clientModel->isPedido($idarticulo);
+            foreach($articulos as $idarticulo){
+                $id_articulos = $idarticulo['id_articulo'];
+            
+                $pedidos = $this->clientModel->isPedido($id_articulos);
+            }
             print_r($pedidos);
         }
         include_once(ROOT_DIRECTORY . '/views/header.php');

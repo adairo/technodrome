@@ -17,18 +17,22 @@
         <div class="row" style="background-color: grey; border-radius: 4px; color:white;">
             <div class="col">
                 <label for=""> Fecha de Pedido:</label><br>
-                <label for=""> 11 de Noviembre 2021</label>
-                
-                <p ><a href='index.php?method=showPedidos<?php echo $p1['cantidad']?>'>
-            <?php echo $p1['cantidad']?></a></p> <!-- Fecha de articulo -->
+                <label for=""> 11 de Noviembre 2021</label><br>
+
             </div>
             <div class="col">
-                <label for=""> Total:</label><br>
-                <label for=""> $1,599 MXN</label>
+                <label for=""> Subtotal:</label><br>
+                <label for=""> <?php 
+                        $precio = intval($p1['precio']);
+                        $cantidad = intval($p1['cantidad']);
+                        $subtotal = $precio * $cantidad;
+                        echo ($subtotal." MXN");
+                ?></label>
+               
             </div>
             <div class="col" style="text-align: right;">
                 <label for=""> No. de Pedido:</label>
-                <label for=""> 100-111-111</label>
+                <label for=""> <?php echo $p1['id_pedido'] ?></label>
             </div>
             
         </div>
@@ -40,7 +44,7 @@
                 <label for=""> Producto: </label>
                 <label for=""> Hyper X - Mouse Alambrico RGB </label><br>
                 <label for=""> Cantidad: </label>
-                <label for=""> 1 </label><br>
+                <label> <?php echo $p1['cantidad']; ?> </label><br>
             </div>
             <div class="col" style="text-align: center; padding-top: 5px;">
                 <div>
