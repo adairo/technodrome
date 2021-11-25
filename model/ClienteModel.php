@@ -87,11 +87,13 @@ class ClienteModel{
 
     function NewMetodoPago($data){
         $this->DB->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $sql = "INSERT INTO clientes(tarjeta_2)
-                VALUES (:tarjeta_2)";
+        $sql = "UPDATE clientes set tarjeta_2 = :tarjeta
+                WHERE id_cliente = :id_cliente ";
+
         $sql_prep = $this->DB->prepare($sql);
 
         $sql_prep->bindValue(':tarjeta_2', $data['tarjeta_2']);# Se pasan los parámetros de manera segura para evitar SQL Injections
+        $sql_prep->bindValue(':id_cliente', $data['id_cliente']);
         $sql_prep->execute();
     }
 
