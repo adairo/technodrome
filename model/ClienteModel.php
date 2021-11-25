@@ -129,7 +129,7 @@ class ClienteModel{
                 WHERE id_cliente = :id LIMIT 1";
         $sql_prep = $this->DB->prepare($sql);
         $sql_prep->bindValue(':id', $id);
-        $sql_prep->query();
+        $sql_prep->execute();
         $data = $sql_prep->fetch(PDO::FETCH_ASSOC);
 
         if ($data['id_pedido'] == null){
@@ -146,24 +146,24 @@ class ClienteModel{
         $this->DB->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $sql = "SELECT id_articulo
                 FROM articulos
-                WHERE id_pedido = :id";
+                WHERE id_pedido = :id_pedido LIMIT 5";
         $sql_prep = $this->DB->prepare($sql);
-        $sql_prep->bindValue(':id', $id);
-        $sql_prep->query();
-        $data = $sql_prep->fetch(PDO::FETCH_ASSOC);
-
+        $sql_prep->bindValue(':id_pedido', $id);
+        $sql_prep->execute();
+        $data = $sql_prep->fetchall(PDO::FETCH_ASSOC);
         return $data;
+        
     }
 
     function isPedido($id){
         $this->DB->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $sql = "SELECT precio, cantidad, id_producto
+        $sql = "SELECT *
                 FROM articulos
-                WHERE id_articulos = :id";
+                WHERE id_articulo = :id";
         $sql_prep = $this->DB->prepare($sql);
         $sql_prep->bindValue(':id', $id);
-        $sql_prep->query();
-        $data = $sql_prep->fetch(PDO::FETCH_ASSOC);
+        $sql_prep->execute();
+        $data = $sql_prep->fetchall(PDO::FETCH_ASSOC);
 
         return $data;
     }
