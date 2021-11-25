@@ -7,8 +7,8 @@ class ProductoModel {
         $this->DB = Database::connect();
     }
 
-    function getAll(){ # No se debería usar este método ya que trae toda la información sensible de todos los clientes
-        $sql = 'SELECT * FROM productos ORDER BY id_producto';
+    function getAll(){
+        $sql = 'SELECT * FROM productos ORDER BY titulo';
         $sql_prep = $this->DB->prepare($sql);
         $sql_prep->execute(); 
         $data = $sql_prep->fetchAll(PDO::FETCH_ASSOC);

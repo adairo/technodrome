@@ -14,6 +14,7 @@ class MainController{
 
     function showHome($status = null, $results = null){
         $last_added = $this->productModel->getLastAdded();
+        $all_products = $this->productModel->getAll();
         
         include_once(ROOT_DIRECTORY . '/views/header.php');
         include_once(ROOT_DIRECTORY . '/views/main.php');
@@ -32,7 +33,10 @@ class MainController{
     function showShoppingCar(){
         session_start();
         if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true){
-            $products = $_SESSION['carrito'];
+            $products = null;
+            if (isset($_SESSION['carrito']))
+                $products = $_SESSION['carrito'];
+
             include_once(ROOT_DIRECTORY . '/views/header.php');
             include_once(ROOT_DIRECTORY . '/views/carrito.php');
             include_once(ROOT_DIRECTORY . '/views/footer.php');
@@ -158,10 +162,10 @@ class MainController{
                 $_SESSION["username"] = $user['nombre'];                            
                 
                 // Se redirige a la pantalla principal
-                header("location: index.php");
+                $this->showHome('Se inició sesión correctamente');
             }
             else 
-                echo 'no existe';
+                $this->showHome('Usuario y/o contraseña incorrectos');
         }
         print_r($user);
     }
@@ -172,7 +176,7 @@ class MainController{
         session_destroy();
 
         // Se redirige a la pantalla principal
-        header("location: index.php");
+        $this->showHome('Se cerró la sesión');
     }
 
     function search(){
@@ -197,21 +201,21 @@ class MainController{
             $producto = $this->productModel->getById($_REQUEST['id_producto']);
             $producto['cantidad'] = 1;
             
-
             if (empty($_SESSION['carrito'])){ //no existe un carrito aún
                 $_SESSION['carrito'] = array($producto);
+                echo 'SE CREA EL CARRITO';
             }
             else{ // Ya existe el carrito pero falta agregar el producto
 
-                foreach ($_SESSION['carrito'] as $key => $prod){
-                    if ($prod['id_producto'] == $producto['id_producto'])// Ya existe el producto
-                        $_SESSION['carrito'][$key]['cantidad'] += 1;
-                    else{
-                        $_SESSION['carrito'][count($_SESSION['carrito'])] = $producto; //Se debería insertar en la última posición
+                $found = false;
+                foreach ($_SESSION['carrito'] as $key => $prod)
+                    if ($prod['id_producto'] === $producto['id_producto']){// Ya existe el producto
+                        $found = true;
+                        break;
                     }
-                }
+                if (!$found) // El producto no se encuentra en el carrito
+                    array_push($_SESSION['carrito'], $producto); 
             }
-            print_r($_SESSION['carrito']);
             $this->showHome('Producto agregado al carrito');
         }
 

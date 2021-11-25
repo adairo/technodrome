@@ -1,5 +1,6 @@
-/* font size */
+#main-div{width: 35%}
 
+/* font size */
 h1{font-size: 2.5rem;}
 #main-div p, #main-div a {font-size: 1.7rem;}
 

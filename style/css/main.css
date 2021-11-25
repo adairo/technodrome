@@ -17,7 +17,8 @@ main{
 /*-- Cuadros de Productos -- */
 
 .product-section{
-    margin-top: 15px;
+    margin: 30px auto;
+    
 }
 .product-section h2 {
     text-align: center;
@@ -38,12 +39,19 @@ main{
     justify-content: flex-start;
     overflow-x: scroll;
     scrollbar-width: none;
-    width: 95%;
+    width: 100%;
+}
+
+.product-section .all-products{
+    display: grid;
+    margin-left: 20px;
+    margin: 0;
+    grid-template-columns: 480px 480px 480px 450px;
 }
 
 .producto-home{
-    margin: 2rem;
-    padding: 1.4rem;
+    margin: 1.4rem;
+    padding: 1.3rem;
     background: white;
     min-width: 40rem;
   

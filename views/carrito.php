@@ -3,8 +3,9 @@
 <div id="main-div">
 
   <div id="product-list">
-
-    <?php foreach ($products as $prod):?>
+    
+    <?php if (!is_null($products)):
+      foreach ($products as $prod):?> <!--// en productos estan nuestros productos-->
       <div class="product">
         <img src="resources/products/500.png" alt="" width="300px" height="300px">
         <div class="product-info">
@@ -20,7 +21,10 @@
           </div>
         </div>
       </div>
-    <?php endforeach; ?>
+    <?php endforeach; 
+  else :
+    echo "<div id='empty'>No hay productos en el carrito</div>";
+  endif;?>
 
   </div>
 </div>

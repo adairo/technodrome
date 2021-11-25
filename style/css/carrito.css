@@ -1,9 +1,13 @@
 #main-div{
-  width: 50%
+  width: 55%;
+  height: fit-content ;
 }
 #product-list{
+  display: grid;
   width: fit-content;
-  display: flex;
+  height: fit-content;
+  margin: 0 auto;
+  grid-template-columns: 330px 330px 330px ;
 }
 
 .product {
@@ -15,6 +19,10 @@
   max-height: 420px;
   padding: 1rem;
 
+}
+
+#empty{
+  font-size: 2rem;
 }
 
 .product img{
@@ -35,14 +43,21 @@
   line-height: 2rem;
   padding: 0 1rem;
   text-align: center;
-  height: 70px;
-  overflow: scroll;
+  height: 45px;
+  overflow: hidden;
+}
+
+.product-description p{
+  font-size: 2rem;
+  font-family: Helvetica;
+  text-align: center;
+  font-weight: bold;
 }
 
 .product-controls {
   display: flex;
   justify-content: space-between;
-  margin-top: 1.4rem;
+  margin-top: 1rem;
 }
 
 .product-controls button {
