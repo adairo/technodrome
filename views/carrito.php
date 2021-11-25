@@ -7,7 +7,7 @@
     <?php if (!is_null($products)):
       foreach ($products as $prod):?> <!--// en productos estan nuestros productos-->
       <div class="product">
-        <img src="resources/products/500.png" alt="" width="300px" height="300px">
+      <img src=<?php echo 'resources/products/' . $prod['id_producto'] . '/150.png'; ?> width="300px" height="300px">
         <div class="product-info">
           <div class="product-description">
             <h2><?php echo $prod['titulo']?></h2>
