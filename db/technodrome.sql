@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 23-11-2021 a las 00:47:18
+-- Tiempo de generación: 25-11-2021 a las 05:24:42
 -- Versión del servidor: 10.4.21-MariaDB
 -- Versión de PHP: 8.0.11
 
@@ -35,6 +35,13 @@ CREATE TABLE `articulos` (
   `id_pedido` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Volcado de datos para la tabla `articulos`
+--
+
+INSERT INTO `articulos` (`id_articulo`, `precio`, `cantidad`, `id_producto`, `id_pedido`) VALUES
+(2, 124, 2, 1, 2);
+
 -- --------------------------------------------------------
 
 --
@@ -59,7 +66,11 @@ CREATE TABLE `clientes` (
 --
 
 INSERT INTO `clientes` (`id_cliente`, `nombre`, `apellidos`, `email`, `user_pass`, `direccion_1`, `direccion_2`, `direccion_3`, `tarjeta_1`, `tarjeta_2`) VALUES
-(2, 'Marco', 'Solis', 'solis@algo.com', '1234', NULL, NULL, NULL, NULL, NULL);
+(2, 'Juan', 'Perez', 'user@example.com', '1234', NULL, NULL, NULL, NULL, NULL),
+(17, 'Miguel', 'Hernández', 'miguel@example.com', '12345', NULL, NULL, NULL, NULL, NULL),
+(19, 'Pancho', 'Villa', 'pancho@hotmail.com', '1234', NULL, NULL, NULL, NULL, NULL),
+(21, 'Aho', 'aasdas', 'hola@ejemplo.com', '123', NULL, NULL, NULL, NULL, NULL),
+(22, 'Alan', 'Garcia', 'alan@hotmail.com', '123', NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -73,6 +84,13 @@ CREATE TABLE `pedidos` (
   `direccion` varchar(40) DEFAULT NULL,
   `id_cliente` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `pedidos`
+--
+
+INSERT INTO `pedidos` (`id_pedido`, `fecha`, `direccion`, `id_cliente`) VALUES
+(2, '2021-11-16', 'hola ', 2);
 
 -- --------------------------------------------------------
 
@@ -98,8 +116,7 @@ INSERT INTO `productos` (`id_producto`, `titulo`, `precio`, `stock`, `categoria`
 (3, 'Fuente de Poder Corsair', 1249, 3, 'Power Supply'),
 (4, 'Fuente de Poder Cooler Master', 1359, 4, 'Power Supply'),
 (5, 'Fuente de Poder Realtek', 800, 4, 'Power Supply'),
-(6, 'Fuente de Poder Power Gaming 450V', 1000, 7, 'Power Supply'),
-(7, 'MACBOOK PRof', 50030, 4, 'PC');
+(6, 'Fuente de Poder Power Gaming 450V', 1000, 7, 'Power Supply');
 
 --
 -- Índices para tablas volcadas
@@ -142,19 +159,19 @@ ALTER TABLE `productos`
 -- AUTO_INCREMENT de la tabla `articulos`
 --
 ALTER TABLE `articulos`
-  MODIFY `id_articulo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_articulo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `clientes`
 --
 ALTER TABLE `clientes`
-  MODIFY `id_cliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_cliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT de la tabla `pedidos`
 --
 ALTER TABLE `pedidos`
-  MODIFY `id_pedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_pedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `productos`
