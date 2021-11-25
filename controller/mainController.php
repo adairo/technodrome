@@ -102,6 +102,23 @@ class MainController{
         include_once(ROOT_DIRECTORY . '/views/footer.php');
     }
 
+
+    function NewMetodoPago(){
+
+        if (!empty($_SERVER['REQUEST_METHOD']) && ($_SERVER['REQUEST_METHOD']== 'POST')){
+            //  Todos los campos tendrán el atributo required de html, de otra forma habrá que verificar
+            //  que no se ingresen campos vacíos
+
+                $data = array(
+                    'tarjeta_2'=> trim($_POST['numerotarjeta'])
+                );
+                $this->clientModel->NewMetodoPago($data);
+                $this->showShoppingCar('register');
+
+        }
+    }
+
+
     function signUp(){
 
         if (!empty($_SERVER['REQUEST_METHOD']) && ($_SERVER['REQUEST_METHOD']== 'POST')){
