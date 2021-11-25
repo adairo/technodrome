@@ -16,7 +16,7 @@ body{
 
 .header-top{
     display: flex;
-    width: 100%;
+    
     
     align-items: baseline;
     
@@ -85,6 +85,8 @@ body{
 
 .header-bottom {
     background: #7CAC9F;
+    
+    padding: 0.6rem;
 }
 .header-bottom ul{
     display: flex;

@@ -163,13 +163,13 @@ class ClienteModel{
         $this->DB->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $sql = "SELECT id_articulo
                 FROM articulos
-                WHERE id_pedido = :id";
+                WHERE id_pedido = :id_pedido LIMIT 5";
         $sql_prep = $this->DB->prepare($sql);
-        $sql_prep->bindValue(':id', $id);
+        $sql_prep->bindValue(':id_pedido', $id);
         $sql_prep->execute();
-        $data = $sql_prep->fetch(PDO::FETCH_ASSOC);
-
+        $data = $sql_prep->fetchall(PDO::FETCH_ASSOC);
         return $data;
+        
     }
 
     function isPedido($id){
@@ -180,7 +180,7 @@ class ClienteModel{
         $sql_prep = $this->DB->prepare($sql);
         $sql_prep->bindValue(':id', $id);
         $sql_prep->execute();
-        $data = $sql_prep->fetch(PDO::FETCH_ASSOC);
+        $data = $sql_prep->fetchall(PDO::FETCH_ASSOC);
 
         return $data;
     }
