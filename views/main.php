@@ -47,7 +47,7 @@
     <div class="product-list">
       <?php foreach($last_added as $product): ?>
         <div class="producto-home">
-          <img src=<?php echo 'resources/products/' . $product['id_producto'] . '/150.png'; ?> width="150px" height="150px">
+          <img src= <?php echo 'resources/products/' . $product['id_producto'] . '/150.png'; ?> width="150px" height="150px">
           <div class="description-home">
 
             <p class='title'><a href='index.php?method=showProduct&id_producto=<?php echo $product['id_producto']?>'>

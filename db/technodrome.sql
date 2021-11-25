@@ -2,8 +2,8 @@
 -- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Servidor: localhost
--- Tiempo de generación: 25-11-2021 a las 05:24:42
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 25-11-2021 a las 06:52:43
 -- Versión del servidor: 10.4.21-MariaDB
 -- Versión de PHP: 8.0.11
 
@@ -35,13 +35,6 @@ CREATE TABLE `articulos` (
   `id_pedido` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Volcado de datos para la tabla `articulos`
---
-
-INSERT INTO `articulos` (`id_articulo`, `precio`, `cantidad`, `id_producto`, `id_pedido`) VALUES
-(2, 124, 2, 1, 2);
-
 -- --------------------------------------------------------
 
 --
@@ -61,17 +54,6 @@ CREATE TABLE `clientes` (
   `tarjeta_2` varchar(60) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Volcado de datos para la tabla `clientes`
---
-
-INSERT INTO `clientes` (`id_cliente`, `nombre`, `apellidos`, `email`, `user_pass`, `direccion_1`, `direccion_2`, `direccion_3`, `tarjeta_1`, `tarjeta_2`) VALUES
-(2, 'Juan', 'Perez', 'user@example.com', '1234', NULL, NULL, NULL, NULL, NULL),
-(17, 'Miguel', 'Hernández', 'miguel@example.com', '12345', NULL, NULL, NULL, NULL, NULL),
-(19, 'Pancho', 'Villa', 'pancho@hotmail.com', '1234', NULL, NULL, NULL, NULL, NULL),
-(21, 'Aho', 'aasdas', 'hola@ejemplo.com', '123', NULL, NULL, NULL, NULL, NULL),
-(22, 'Alan', 'Garcia', 'alan@hotmail.com', '123', NULL, NULL, NULL, NULL, NULL);
-
 -- --------------------------------------------------------
 
 --
@@ -84,13 +66,6 @@ CREATE TABLE `pedidos` (
   `direccion` varchar(40) DEFAULT NULL,
   `id_cliente` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `pedidos`
---
-
-INSERT INTO `pedidos` (`id_pedido`, `fecha`, `direccion`, `id_cliente`) VALUES
-(2, '2021-11-16', 'hola ', 2);
 
 -- --------------------------------------------------------
 
@@ -111,12 +86,22 @@ CREATE TABLE `productos` (
 --
 
 INSERT INTO `productos` (`id_producto`, `titulo`, `precio`, `stock`, `categoria`) VALUES
-(1, 'GTX 3090', 100000, 2, 'GPU'),
+(1, 'GTX 3090', 10000, 2, 'GPU'),
 (2, '1060 TI', 5000, 10, 'GPU'),
 (3, 'Fuente de Poder Corsair', 1249, 3, 'Power Supply'),
 (4, 'Fuente de Poder Cooler Master', 1359, 4, 'Power Supply'),
 (5, 'Fuente de Poder Realtek', 800, 4, 'Power Supply'),
-(6, 'Fuente de Poder Power Gaming 450V', 1000, 7, 'Power Supply');
+(6, 'Fuente de Poder Power Gaming 450V', 1000, 7, 'Power Supply'),
+(7, 'MACBOOK PRO', 50300, 4, 'PC'),
+(8, 'Memoria RAM Corsair 16GB', 2500, 4, 'Componentes'),
+(9, 'HyperX Pulsefire Surge RGB Mouse', 1099, 5, 'Componentes'),
+(10, 'Teclado Gaming Razer BlackWidow V3', 2500, 3, 'Componentes'),
+(11, 'Audifonos Gaming HyperX Cloud Alpha', 1500, 4, 'Componentes'),
+(12, 'Dell Gaming G3 15 3500 Intel Core I5 8Gb', 27000, 2, 'PC'),
+(13, 'ASUS VivoBook 14 PC Portátil', 16000, 3, 'PC'),
+(14, 'Gigabyte Tarjeta gráfica GeForce RTX 306', 29000, 3, 'GPU'),
+(15, 'Intel Procesador Core I7-9700KF 9th Gen', 6000, 4, 'Componentes'),
+(16, 'Asus ROG Strix X570-E Gaming Motherboard', 7500, 4, 'Componentes');
 
 --
 -- Índices para tablas volcadas
@@ -159,25 +144,25 @@ ALTER TABLE `productos`
 -- AUTO_INCREMENT de la tabla `articulos`
 --
 ALTER TABLE `articulos`
-  MODIFY `id_articulo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_articulo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `clientes`
 --
 ALTER TABLE `clientes`
-  MODIFY `id_cliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id_cliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT de la tabla `pedidos`
 --
 ALTER TABLE `pedidos`
-  MODIFY `id_pedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_pedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `productos`
 --
 ALTER TABLE `productos`
-  MODIFY `id_producto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_producto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- Restricciones para tablas volcadas
