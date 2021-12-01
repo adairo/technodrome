@@ -16,8 +16,8 @@
           <div class="product-controls">
             <button class='delete'>Eliminar</button>
             <button>-</button>
-            <input type="text" value='<?php echo $prod['cantidad']; ?>'>
-            <button>+</button>
+            <input id = '<?php echo $prod['id_producto'];?>' type="text" value='<?php echo $prod['cantidad']; ?>'>
+            <button class='inc'>+</button>
           </div>
         </div>
       </div>

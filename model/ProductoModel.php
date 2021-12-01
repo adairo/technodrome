@@ -17,7 +17,7 @@ class ProductoModel {
 
     function getLastAdded(){
         $sql = "SELECT id_producto, titulo, precio, categoria FROM productos
-                ORDER BY id_producto DESC LIMIT 10;";
+                ORDER BY id_producto DESC LIMIT 6;";
         $sql_prep = $this->DB->prepare($sql);
         $sql_prep->execute(); 
         $data = $sql_prep->fetchAll(PDO::FETCH_ASSOC);
@@ -38,6 +38,18 @@ class ProductoModel {
         $sql = "SELECT id_producto, titulo, precio, categoria 
                 FROM productos
                 WHERE titulo LIKE :search";
+        $sql_prep = $this->DB->prepare($sql);
+        $sql_prep->bindValue(':search', "%$search%", PDO::PARAM_STR);
+        $sql_prep->execute();
+        $data = $sql_prep->fetchAll(PDO::FETCH_ASSOC);
+
+        return $data;
+    }
+
+    function filterByCategory($search){
+        $sql = "SELECT id_producto, titulo, precio, categoria 
+                FROM productos
+                WHERE categoria LIKE :search";
         $sql_prep = $this->DB->prepare($sql);
         $sql_prep->bindValue(':search', "%$search%", PDO::PARAM_STR);
         $sql_prep->execute();

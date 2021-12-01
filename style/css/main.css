@@ -49,6 +49,15 @@ main{
     grid-template-columns: 480px 480px 480px 450px;
 }
 
+@media (max-width: 600px){
+    .product-section .all-products{
+    display: grid;
+    margin-left: 20px;
+    margin: 0;
+    grid-template-columns: 480px 480px;
+}
+}
+
 .producto-home{
     margin: 1.4rem;
     padding: 1.3rem;

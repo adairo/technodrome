@@ -5,12 +5,12 @@
   <form method='post' class='data-form'>
     <label>
       Metodo de Pago 1
-      <input type="radio" name="metodo1" value="1">9012
+      <input type="radio" name="metodo" value="1">9012
     </label>
 
     <label>
       Metodo de Pago 2
-      <input type="radio" name="metodo2" value="2">
+      <input type="radio" name="metodo" value="2">
     </label>
 
 

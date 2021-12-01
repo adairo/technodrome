@@ -16,10 +16,7 @@ body{
 
 .header-top{
     display: flex;
-    
-    
     align-items: baseline;
-    
 	background: #379C9F;
     padding: 0.6rem;
 }

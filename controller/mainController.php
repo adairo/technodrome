@@ -68,6 +68,11 @@ class MainController{
         include_once(ROOT_DIRECTORY . '/views/footer.php');
     }
 
+    function showCategory(){
+        $productos = $this->productModel->filterByCategory($_REQUEST['cat']);
+        $this->showHome(null, $productos);
+    }
+
 
     function showPedidos(){
         session_start();
@@ -215,7 +220,6 @@ class MainController{
             
             if (empty($_SESSION['carrito'])){ //no existe un carrito aún
                 $_SESSION['carrito'] = array($producto);
-                echo 'SE CREA EL CARRITO';
             }
             else{ // Ya existe el carrito pero falta agregar el producto
 

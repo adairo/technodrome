@@ -36,7 +36,7 @@
               echo "<li><a href='index.php?method=showLogIn'>Iniciar sesión</a></li>";
           ?>
 
-          <li><a href="index.php?method=showPedidos">Mis pedidos</a></li>
+          <li><a href="">Mis pedidos</a></li>
           <li><a href="index.php?method=showShoppingCar">Carrito</a></li>
         </ul>
       </div> 
@@ -46,8 +46,10 @@
       <ul>
         <li><a href="index.php">Inicio</a></li>
 
-        <li><a href="">PC</a></li>
-        <li><a href="">Componentes</a></li>
+        <li><a href="index.php?method=showCategory&cat=PC">PC</a></li>
+        <li><a href="index.php?method=showCategory&cat=Componentes">Componentes</a></li>
+        <li><a href="index.php?method=showCategory&cat=GPU">GPU</a></li>
+        <li><a href="index.php?method=showCategory&cat=Power%20Supply">Fuentes de poder</a></li>
       </ul>
     </div>
     

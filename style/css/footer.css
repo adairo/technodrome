@@ -5,6 +5,8 @@
 .pie-pagina{
     width: 100%;
     background-color: #379C9F;
+    font-size: 1.8rem;
+    text-align: justify;
 }
 .pie-pagina .grupo-1{
     width: 100%;
@@ -65,4 +67,12 @@
         grid-gap:30px;
         padding: 35px 0px;
     }
+}
+
+address{
+    color:lightcyan;
+}
+
+address a{
+    color:lightcyan;
 }

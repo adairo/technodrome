@@ -30,13 +30,16 @@
     font-size: 1.7rem;
 }
 
-.product-info p{
-    margin-top: 2rem;
+.product-info .precio{
     font-size: 2rem;
+    font-weight: bold;
 }
 
-.product-description p {
+.product-description {
     font-size: 1.8rem;
+    font-family: Helvetica;
+    padding-left: 1rem;
+    margin-top: 2rem;
 } 
 
 button{
