@@ -4,19 +4,16 @@
 }
 #product-list{
   display: grid;
-  width: fit-content;
-  height: fit-content;
+
+
   margin: 0 auto;
-  grid-template-columns: 330px 330px 330px ;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 330px));;
 }
 
 .product {
   display: flex;
   flex-direction: column;
   margin-top: 3rem;
-  width: fit-content;
-  
-  max-height: 420px;
   padding: 1rem;
 
 }
