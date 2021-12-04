@@ -7,6 +7,7 @@
     <title>TECHNODROME STORE</title>
     
     <link rel="shortcut icon" href="logo1.jpg">
+    <script src="style/js/main.js" defer></script>
     <meta charset="UTF-8">
     
 
@@ -14,23 +15,30 @@
     <link rel="stylesheet" href="style/css/header.css">
     
   </head>
-  <header>
+ 
 
     <!-- Barra Busqueda -->
-    <div class='header-top'>
+    <nav class='navbar'>
       
-      
-      <form id='search-field' method='POST' action='index.php?method=search'>
-        <header>Technodrome</header>
-        <input type="text" class='search-bar' placeholder="Buscar en la página" name='search-query'>
-        <input type="submit" value='Buscar' class='btn search-button'>
-      </form>
+      <div class="search-and-title">
+        <header class='brand-title'>Technodrome</header>
+        <form id='search-field' method='POST' action='index.php?method=search'>
+          <input type="text" class='search-bar' placeholder="Buscar en la página" name='search-query'>
+          <input type="submit" value='Buscar' class='search-button'>
+        </form>
+      </div>
 
-      
-        <ul class='user-actions'>
+      <div class="toggle-button">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+
+      <div class="navbar-links">
+        <ul>
           <?php 
             if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true){
-              echo '<li id="hi">Hola '. $_SESSION['username']. '</li>';
+              echo '<li disabled id="hi"><a>Hola '. $_SESSION['username']. '</a></li>';
               echo "<li><a href='index.php?method=logOut'>Cerrar sesión</a></li>";
             }
             else
@@ -38,7 +46,9 @@
           ?>
           <li><a href="index.php?method=showShoppingCar">Carrito</a></li>
         </ul>
-    </div>
+      </div>
+      
+    </nav>
 
     <div class="header-bottom">
       <ul>
@@ -50,5 +60,3 @@
         <li><a href="index.php?method=showCategory&cat=Power%20Supply">Fuentes de poder</a></li>
       </ul>
     </div>
-    
-  </header>

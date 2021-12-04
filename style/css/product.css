@@ -15,6 +15,13 @@
 
 .product-about{
     display: flex;
+    flex-direction: row;
+}
+
+@media (max-width: 1212px) {
+    .product-about {
+        flex-direction: column;
+    }
 }
 
 .product-info{

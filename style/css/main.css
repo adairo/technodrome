@@ -14,7 +14,11 @@
 /*-- Cuadros de Productos -- */
 
 .product-section{
-    margin: 30px auto;
+    margin: 0 auto;
+}
+
+.product-section.all-section{
+    width: 100%;
 }
 
 .products-container {
@@ -48,7 +52,7 @@
     display: grid;
     width: 100%;
     margin: 0 auto;
-    grid-template-columns: repeat(auto-fit, minmax(330px, 350px));
+    grid-template-columns: repeat(auto-fit, minmax(330px, 450px));
 }
 
 
@@ -57,11 +61,14 @@
     margin: 1.4rem;
     padding: 1.3rem;
     background: white;
-    min-width: 300px;
     display: flex;
     border-radius: 1rem;
     box-shadow: 2px 2px 7px 2px rgba(0, 0, 0, 0.2);
     transition: transform 0.15s ease-in-out 0s;
+}
+
+.last-added .producto-home{
+    min-width: 380px;
 }
 
 

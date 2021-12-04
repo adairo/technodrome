@@ -41,7 +41,7 @@
   
 
   <!-- Últimos agregados -->
-  <section class='product-section'>
+  <section class='product-section last-added'>
 
     <h2>Productos agregados recientemente</h2>
     <div class="product-list">
@@ -67,7 +67,7 @@
   </section>
 
   <!-- Todos los productos -->
-  <section class='product-section'>
+  <section class='product-section all-section'>
 
     <h2>Todos los productos</h2>
     <div class="products-container">

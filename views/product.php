@@ -12,7 +12,5 @@
         </div>
         <a href="index.php?method=addToCar&id_producto=<?php echo $product['id_producto'] ?>"><button>Agregar al carrito</button></a>
       </div>
-
-    
     </div>
 </div>
